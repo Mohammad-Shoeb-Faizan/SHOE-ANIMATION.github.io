@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOE ANIMATION</title>
+</head>
+<body>
+    <div></div>
+    <img src="./shoe.png" alt="SHOE">
+</body>
+</html>
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        height: 100vh;
+        background-image: url('./bg.png');
+        background-size: cover;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        animation: back-color 3s infinite alternate-reverse;
+    }
+
+    div{
+        height: 500px;
+        width: 500px;
+        background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);        
+        border-radius: 50%;
+        position: absolute;
+        justify-self: center;
+        z-index: -1;
+        animation: rotate 4s ease-in infinite;
+    }
+
+    img{
+        height: 60vh;
+        pointer-events: none;
+        animation: floating 4s ease-in-out infinite;
+    }
+
+    @keyframes rotate{
+        0%{
+            transform: rotate(0deg);
+        }
+        50%{
+            transform: rotate(360deg);
+        }
+        100%{
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes floating{
+        0%{
+            transform: translateY(20px);
+        }
+        50%{
+            transform: translateY(-20px);
+        }
+        100%{
+            transform: translateY(20px);
+        }
+    }
+
+    @keyframes back-color{
+        0%{
+            background: #212121;
+            background-image: url(./bg1.png);
+            background-size: cover;
+        }
+        100%{
+            background: white;
+            background-image: url(./bg.png);
+            background-size: cover;
+        }
+    }
+
+</style>
